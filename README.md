@@ -924,3 +924,42 @@ If fromId is set, it will get orders >= that fromId. Otherwise most recent order
   }
 ]
 ```
+
+### ETF net value  (MARKET_DATA)
+
+```
+GET /api/v1/etf/net-value/{symbol}  (HMAC SHA256)
+```
+
+Get trades for a specific account and symbol.
+
+**Weight:**
+5 with symbol;40 when the symbol parameter is omitted
+
+**Parameters:**
+
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+symbol | STRING | YES |
+
+**Notes:**
+
+path variable symbol should set symbol ,for example 
+
+/api/v1/etf/net-value/xrp3lusdt
+
+**Response:**
+
+```javascript
+{
+"id": 5916134,
+"symbol": "xrp3lusdt",
+"futruesPrice": 1.1786,
+"netValue": 1.079792003418094,
+"beginNetValue": 1.0075782872361934,
+"beginFutruesPrice": 1.1511,
+"seqId": 182101153490862080,
+"beginTs": 1629144393980,
+"ts": 1629147837595
+}
+```
