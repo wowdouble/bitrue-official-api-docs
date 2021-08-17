@@ -934,7 +934,7 @@ GET /api/v1/etf/net-value/{symbol}  (HMAC SHA256)
 Get trades for a specific account and symbol.
 
 **Weight:**
-5 with symbol;40 when the symbol parameter is omitted
+1 
 
 **Parameters:**
 
