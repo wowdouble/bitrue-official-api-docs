@@ -953,13 +953,13 @@ path variable symbol should set symbol ,for example
 ```javascript
 {
 "id": 5916134,
-"symbol": "xrp3lusdt",
-"futruesPrice": 1.1786,
-"netValue": 1.079792003418094,
-"beginNetValue": 1.0075782872361934,
-"beginFutruesPrice": 1.1511,
-"seqId": 182101153490862080,
-"beginTs": 1629144393980,
-"ts": 1629147837595
+"symbol": "xrp3lusdt", #ETF 币对名称
+"futruesPrice": 1.1786,  #合约价格 
+"netValue": 1.079792003418094,   # 净值 
+"beginNetValue": 1.0075782872361934,  #期初净值
+"beginFutruesPrice": 1.1511,  #期初净值对应的合约价格
+"seqId": 182101153490862080,  # 净值记录唯一id 
+"beginTs": 1629144393980, # 期初时间戳
+"ts": 1629147837595. # 数据生成的时间戳 
 }
 ```
