@@ -1,4 +1,4 @@
-# Public Rest API for Bitrue (2018-10-18)
+# Public Rest API for Bitrue (2021-08-17)
 # General API Information
 * The base endpoint is: **https://www.bitrue.com**
 * All endpoints return either a JSON object or array.
