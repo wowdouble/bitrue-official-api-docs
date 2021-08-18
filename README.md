@@ -878,3 +878,87 @@ Otherwise most recent orders are returned.
   }
 ]
 ```
+
+### Account trade list (USER_DATA)
+```
+GET /api/v2/myTrades  (HMAC SHA256)
+```
+Get trades for a specific account and symbol.
+
+**Weight:**
+5 with symbol;40 when the symbol parameter is omitted
+
+**Parameters:**
+
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+symbol | STRING | YES |
+startTime | LONG | NO |
+endTime | LONG | NO |
+fromId | LONG | NO | TradeId to fetch from. Default gets most recent trades.
+limit | INT | NO | Default 100; max 1000.
+recvWindow | LONG | NO |
+timestamp | LONG | YES |
+
+**Notes:**
+* If `fromId` is set, it will get orders >= that `fromId`.
+Otherwise most recent orders are returned.
+
+**Response:**
+```javascript
+[
+  {
+    "symbol": "BNBBTC",
+    "id": 28457,
+    "orderId": 100234,
+    "price": "4.00000100",
+    "qty": "12.00000000",
+    "commission": "10.10000000",
+    "commissionAsset": "BNB",
+    "time": 1499865549590,
+    "isBuyer": true,
+    "isMaker": false,
+    "isBestMatch": true    **Reserved**
+  }
+]
+```
+
+
+### ETF net value  (MARKET_DATA)
+
+```
+GET /api/v1/etf/net-value/{symbol}  (HMAC SHA256)
+```
+
+Get trades for a specific account and symbol.
+
+**Weight:**
+1 
+
+**Parameters:**
+
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+symbol | STRING | YES |
+
+**Notes:**
+
+path variable symbol should set symbol ,for example 
+
+/api/v1/etf/net-value/xrp3lusdt
+
+**Response:**
+
+```javascript
+{
+"id": 5916134,
+"symbol": "xrp3lusdt", #ETF 币对名称
+"futruesPrice": 1.1786,  #合约价格 
+"netValue": 1.079792003418094,   # 净值 
+"beginNetValue": 1.0075782872361934,  #期初净值
+"beginFutruesPrice": 1.1511,  #期初净值对应的合约价格
+"seqId": 182101153490862080,  # 净值记录唯一id 
+"beginTs": 1629144393980, # 期初时间戳
+"ts": 1629147837595. # 数据生成的时间戳 
+}
+```
